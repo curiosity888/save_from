@@ -4,6 +4,9 @@ import os
 import telebot
 from pytubefix import YouTube
 from pytubefix.cli import on_progress
+import logging
+
+logging.basicConfig(filename='/home/curiosity/.telebot.log', level=logging.INFO)
 
 TGBOT_TOKEN = os.environ.get('TGBOT_TOKEN')
 TGBOT_USER_IDS = os.environ.get('TGBOT_USER_IDS').split(', ')
@@ -59,6 +62,7 @@ def download_youtube_video(url):
 
 if __name__ == '__main__':
     try:
+        logging.info("Запуск бота...")
         bot.polling()
     except (KeyboardInterrupt, SystemExit):
         pass
