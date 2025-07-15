@@ -1,0 +1,2 @@
+pyTelegramBotAPI==4.27.0
+pytubefix==9.2.2
