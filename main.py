@@ -39,8 +39,7 @@ def save_from(message):
     # Отправляем видео в Telegram
     try:
         with open(file_path, 'rb') as video:
-            bot.send_video(chat_id, video, caption="Ваше видео с YouTube!")
-        bot.reply_to(message, "Видео успешно отправлено!")
+            bot.send_video(chat_id, video)
     except Exception as e:
         bot.reply_to(message, f"Ошибка при отправке видео: {e}")
     finally:
