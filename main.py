@@ -17,6 +17,7 @@ bot = telebot.TeleBot(TGBOT_TOKEN)
 def authorize(func):
     def wrapper(message, *args, **kwargs):
         user_id = message.from_user.id
+        print("USER_ID: ", user_id)
         if user_id not in allowed_user_ids:
             bot.reply_to(message, "This is a private bot. You are not authorized to use this bot.")
         else:
